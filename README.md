@@ -6,7 +6,7 @@ Official repository for **“From Detection to Characterization: A Large-Scale S
 
 ## What is ragebait?
 
-**Ragebait** is online content deliberately framed to provoke anger or outrage—often through frustrating, inflammatory, or offensive presentation—in order to attract attention, clicks, replies, or other engagement. In this project, the term refers specifically to posts whose provocative framing appears intentional; ordinary negative opinions, complaints, news reporting, and calm criticism are not automatically considered ragebait.
+**Ragebait** is online content deliberately framed to provoke anger or outrage—often through frustrating, inflammatory, or offensive presentation—in order to attract attention, clicks, replies, or other engagement.
 
 Oxford University Press named *rage bait* the **[Oxford Word of the Year 2025](https://corp.oup.com/word-of-the-year/)**, reporting that its usage had tripled over the preceding 12 months. The recognition reflects growing public awareness of how outrage can be deliberately used to capture attention and drive online engagement.
 
@@ -36,20 +36,11 @@ The ID-only format also minimizes disclosure from the research annotations. No l
 
 There is deliberately no `label_name` or `reason` field. See [`data/README.md`](data/README.md) for file details.
 
-## Before public release
-
-Before changing the repository visibility to public, the authors plan to:
-
-1. Obtain the appropriate institutional ethics review, approval, or written determination of non-applicability.
-2. Confirm that the release mechanism and permitted uses comply with the current X terms and policies.
-3. Establish a clear correction and identifier-removal procedure.
-4. Validate that the files contain only the necessary Post IDs and no labels, content, annotation reasons, or user-level attributes.
-
 ## Annotation model and prompt
 
-Both GPT-assisted labeling stages used OpenAI **GPT-5.4 mini**, with the API model identifier `gpt-5.4-mini`. Requests were submitted through the Chat Completions Batch API with `temperature=0.2`.
+Annotation used OpenAI **GPT-5.4 mini**, with the API model identifier `gpt-5.4-mini`. Requests were submitted through the Chat Completions Batch API with `temperature=0.2`.
 
-The same Japanese binary-classification prompt was used in both stages. It defines ragebait in terms of intentional provocation and distinguishes it from ordinary negative opinions, complaints, news sharing, and calm criticism.
+A Japanese binary-classification prompt was used. It defines ragebait in terms of intentional provocation and distinguishes it from ordinary negative opinions, complaints, news sharing, and calm criticism.
 
 - [Full Japanese annotation prompt](prompts/ragebait_annotation_ja.txt)
 - Output label: `YES` or `NO`

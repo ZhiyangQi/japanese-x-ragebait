@@ -50,14 +50,6 @@ A Japanese binary-classification prompt was used. It defines ragebait in terms o
 
 The internal labels are LLM-generated pseudo-labels rather than manually established gold labels. The accompanying paper reports a separate two-annotator validation on a balanced sample of 200 Posts. The prompt is released for methodological transparency, but its per-Post outputs, including labels and reasons, are not released.
 
-## Repository safeguard
-
-```bash
-python scripts/validate_release.py
-```
-
-The validator checks the single-column schema, split sizes, Post ID format, uniqueness, split separation, and the absence of any additional data CSV.
-
 ## Intended use and limitations
 
 - Intended for non-commercial academic research, peer review, and validation of the accompanying study.

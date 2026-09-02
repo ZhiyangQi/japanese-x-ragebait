@@ -101,7 +101,7 @@ The three trained checkpoints and their model cards are available on Hugging Fac
 @inproceedings{qi2026ragebait,
   title     = {From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X},
   author    = {Qi, Zhiyang and Ito, Kazuhiro and Chen, Jinghui and Nakamura, Hibiki and Chen, Zhangxuan and Murata, Erina and Chujyo, Masaki and Toriumi, Fujio},
-  booktitle = {WI-IAT 2026},
+  booktitle = {2026 IEEE/WIC International Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT)},
   year      = {2026}
 }
 ```

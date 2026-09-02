@@ -87,7 +87,13 @@ The validator checks split sizes, class balance, IDs, headers, duplicate IDs, ch
 
 ## Models
 
-The trained model checkpoints and model cards will be released separately on Hugging Face. The collection link will be added here after the model release is reviewed.
+The three trained checkpoints and their model cards are available on Hugging Face. They are currently private during the review-release stage.
+
+| Model | Base model | Hugging Face repository |
+| --- | --- | --- |
+| Rinna RoBERTa | [`rinna/japanese-roberta-base`](https://huggingface.co/rinna/japanese-roberta-base) | [`ZhiyangQi97/japanese-x-ragebait-rinna-roberta-base`](https://huggingface.co/ZhiyangQi97/japanese-x-ragebait-rinna-roberta-base) |
+| Tohoku BERT v3 | [`tohoku-nlp/bert-base-japanese-v3`](https://huggingface.co/tohoku-nlp/bert-base-japanese-v3) | [`ZhiyangQi97/japanese-x-ragebait-tohoku-bert-base-v3`](https://huggingface.co/ZhiyangQi97/japanese-x-ragebait-tohoku-bert-base-v3) |
+| LINE DistilBERT | [`line-corporation/line-distilbert-base-japanese`](https://huggingface.co/line-corporation/line-distilbert-base-japanese) | [`ZhiyangQi97/japanese-x-ragebait-line-distilbert-base`](https://huggingface.co/ZhiyangQi97/japanese-x-ragebait-line-distilbert-base) |
 
 ## Citation
 

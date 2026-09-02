@@ -101,6 +101,10 @@ The three trained checkpoints and their model cards are available on Hugging Fac
 | Tohoku BERT v3 | [`tohoku-nlp/bert-base-japanese-v3`](https://huggingface.co/tohoku-nlp/bert-base-japanese-v3) | [`ZhiyangQi97/japanese-x-ragebait-tohoku-bert-base-v3`](https://huggingface.co/ZhiyangQi97/japanese-x-ragebait-tohoku-bert-base-v3) |
 | LINE DistilBERT | [`line-corporation/line-distilbert-base-japanese`](https://huggingface.co/line-corporation/line-distilbert-base-japanese) | [`ZhiyangQi97/japanese-x-ragebait-line-distilbert-base`](https://huggingface.co/ZhiyangQi97/japanese-x-ragebait-line-distilbert-base) |
 
+## Acknowledgments
+
+This work was supported by JST ERATO (JPMJER2502).
+
 ## Citation
 
 ```bibtex

@@ -4,6 +4,12 @@ Official dataset release for **“From Detection to Characterization: A Large-Sc
 
 > **Private review release:** this repository is currently private and is being reviewed before public release.
 
+## What is ragebait?
+
+**Ragebait** is online content deliberately framed to provoke anger or outrage—often through frustrating, inflammatory, or offensive presentation—in order to attract attention, clicks, replies, or other engagement. In this project, the term refers specifically to posts whose provocative framing appears intentional; ordinary negative opinions, complaints, news reporting, and calm criticism are not automatically considered ragebait.
+
+Oxford University Press named *rage bait* the **[Oxford Word of the Year 2025](https://corp.oup.com/word-of-the-year/)**, reporting that its usage had tripled over the preceding 12 months. The recognition reflects growing public awareness of how outrage can be deliberately used to capture attention and drive online engagement.
+
 ## Dataset
 
 | Split | Total | Ragebait | Non-ragebait | File |

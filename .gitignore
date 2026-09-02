@@ -9,4 +9,6 @@ hydrated/
 private/
 credentials/
 data/*.csv
+!data/train_ids.csv
+!data/test_ids.csv
 data/manifest.json

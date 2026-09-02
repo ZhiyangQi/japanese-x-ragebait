@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rehydrate labeled Post IDs locally through X API v2.
+"""Rehydrate Post IDs locally through X API v2.
 
 The output contains X content and is intentionally written under an ignored
 directory by default. Do not commit or publicly redistribute it.
@@ -80,7 +80,7 @@ def main() -> int:
     with args.input.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
 
-    required = {"tweet_id", "label_name"}
+    required = {"tweet_id"}
     if not rows or not required.issubset(rows[0]):
         print(f"Input must contain: {', '.join(sorted(required))}", file=sys.stderr)
         return 2
@@ -99,7 +99,6 @@ def main() -> int:
                 post = posts.get(post_id)
                 record = {
                     "tweet_id": post_id,
-                    "label_name": row["label_name"],
                     "available": post is not None,
                 }
                 if post is not None:

@@ -21,6 +21,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 This MIT License applies only to repository software and documentation. It does
-not grant rights to X content or define the final license for the research
-annotations in `data/`. See `DATA_USE.md`.
-
+not grant rights to X content or to the Post IDs in `data/`. See `DATA_USE.md`.

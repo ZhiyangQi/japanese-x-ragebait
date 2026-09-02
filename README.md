@@ -2,7 +2,7 @@
 
 Official repository for **“From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X”**, accepted at WI-IAT 2026.
 
-> **Review status:** this repository is currently private. The labeled Post ID files are not distributed while the authors complete the appropriate institutional ethics review or obtain a written determination that the release is not subject to review, confirm platform-policy requirements, and finalize the data license and removal process. The authors intend to release the data only after these checks, and only in a reasonable, lawful, and policy-compliant form.
+> **ID-only release candidate:** this repository is currently private during final preparation. The release files contain only the X Post IDs used in the study's training and test splits. They contain no per-Post labels, post text, annotation reasons, usernames, profiles, URLs, media, or hydrated X objects.
 
 ## What is ragebait?
 
@@ -10,42 +10,40 @@ Official repository for **“From Detection to Characterization: A Large-Scale S
 
 Oxford University Press named *rage bait* the **[Oxford Word of the Year 2025](https://corp.oup.com/word-of-the-year/)**, reporting that its usage had tripled over the preceding 12 months. The recognition reflects growing public awareness of how outrage can be deliberately used to capture attention and drive online engagement.
 
-## Planned dataset
+## ID-only dataset
 
-| Split | Total | Ragebait | Non-ragebait | Current availability |
-| --- | ---: | ---: | ---: | --- |
-| Train | 16,558 | 8,279 | 8,279 | Withheld pending review |
-| Test | 2,000 | 1,000 | 1,000 | Withheld pending review |
-| **Total** | **18,558** | **9,279** | **9,279** | **No row-level files distributed** |
+| Split | Post IDs | File |
+| --- | ---: | --- |
+| Train | 16,558 | [`data/train_ids.csv`](data/train_ids.csv) |
+| Test | 2,000 | [`data/test_ids.csv`](data/test_ids.csv) |
+| **Total** | **18,558** | |
 
-These counts describe the labeled dataset used in the study. This repository currently provides no Post IDs, post text, usernames, user profiles, URLs, media, annotation reasons, or hydrated Post objects.
+Each file contains a single `tweet_id` column. The two files identify only which original X Posts were included in the study's training and test datasets.
 
-If a future release is approved, the planned format is **dehydrated** and limited to the minimum fields needed for research validation: Post IDs and `YES`/`NO` research labels. The final access mechanism and scope may change in response to institutional review, X policy, applicable law, and risk assessment.
+> **Important:** inclusion in either file does **not** mean that a Post was labeled as ragebait. The original study dataset contained both ragebait and non-ragebait examples, but this repository does not disclose the label assigned to any individual Post.
 
-## Why post text will not be included
+## Why only Post IDs are included
 
 The current [X Developer Policy](https://docs.x.com/developer-terms/policy) restricts redistribution of hydrated X content in downloadable datasets. The [restricted-use guidance](https://docs.x.com/developer-terms/restricted-use-cases) recommends sharing Post IDs so researchers can request the current public object directly from X.
 
-Any future release will require researchers to obtain currently available objects directly from X through an officially permitted interface. Deleted, protected, suspended, or otherwise unavailable posts must remain unavailable.
+The ID-only format also minimizes disclosure from the research annotations. No label mapping or annotation reason is released. Researchers must obtain currently available objects directly from X through an officially permitted interface using their own credentials. Deleted, protected, suspended, or otherwise unavailable Posts must remain unavailable.
 
-## Planned schema
+## Schema
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `tweet_id` | string | X Post ID. Keep as a string to avoid integer precision loss. |
-| `label_name` | string | `YES` = ragebait, `NO` = non-ragebait. |
 
-See [`data/README.md`](data/README.md) for the planned structure and current review status. No dataset download is currently provided.
+There is deliberately no `label_name` or `reason` field. See [`data/README.md`](data/README.md) for file details.
 
-## Conditions for a future release
+## Before public release
 
-Before distributing row-level data, the authors plan to:
+Before changing the repository visibility to public, the authors plan to:
 
 1. Obtain the appropriate institutional ethics review, approval, or written determination of non-applicability.
 2. Confirm that the release mechanism and permitted uses comply with the current X terms and policies.
-3. Finalize a license for the original research annotations and a clear correction/removal procedure.
-4. Reassess re-identification and reputational risks and distribute only the minimum necessary fields.
-5. Validate that no post text, usernames, profiles, URLs, media, annotation reasons, or user-level attributes are included.
+3. Establish a clear correction and identifier-removal procedure.
+4. Validate that the files contain only the necessary Post IDs and no labels, content, annotation reasons, or user-level attributes.
 
 ## Annotation model and prompt
 
@@ -59,7 +57,7 @@ The same Japanese binary-classification prompt was used in both stages. It defin
 - Model: `gpt-5.4-mini`
 - Temperature: `0.2`
 
-The labels are LLM-generated pseudo-labels rather than manually established gold labels. The accompanying paper reports a separate two-annotator validation on a balanced sample of 200 posts.
+The internal labels are LLM-generated pseudo-labels rather than manually established gold labels. The accompanying paper reports a separate two-annotator validation on a balanced sample of 200 Posts. The prompt is released for methodological transparency, but its per-Post outputs, including labels and reasons, are not released.
 
 ## Repository safeguard
 
@@ -67,13 +65,14 @@ The labels are LLM-generated pseudo-labels rather than manually established gold
 python scripts/validate_release.py
 ```
 
-While the data is withheld, the validator fails if row-level CSV files or a release manifest are tracked by Git.
+The validator checks the single-column schema, split sizes, Post ID format, uniqueness, split separation, and the absence of any additional data CSV.
 
 ## Intended use and limitations
 
 - Intended for non-commercial academic research, peer review, and validation of the accompanying study.
-- Do not use the labels to profile, rank, target, identify, harass, or make consequential decisions about individual users.
-- Ragebait is contextual and intent-based. The labels may contain annotation errors and should not be treated as facts about a person.
+- Do not interpret inclusion in these files as a ragebait classification or as a factual claim about a Post or its author.
+- Do not use this resource to profile, rank, target, identify, harass, surveil, or make consequential decisions about individual users.
+- Ragebait is contextual and intent-based. The unreleased research labels may contain annotation errors and should not be treated as facts about a person.
 - Post IDs and any content obtained from them remain subject to the current X terms and policies.
 - This repository grants no license to X content. See [`DATA_USE.md`](DATA_USE.md).
 

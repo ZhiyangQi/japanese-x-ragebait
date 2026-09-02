@@ -1,18 +1,20 @@
-# Dataset availability
+# ID-only dataset files
 
-No row-level dataset files are currently distributed in this repository. The previously staged `train.csv`, `test.csv`, and `manifest.json` files have been withdrawn while the authors complete the appropriate institutional ethics and compliance review.
+This directory contains only the X Post IDs used in the study's training and test splits:
 
-The study dataset contains 16,558 training examples and 2,000 test examples. Each split is balanced between ragebait and non-ragebait labels. These counts are provided for documentation only and are not a data release.
+- `train_ids.csv`: 16,558 Post IDs.
+- `test_ids.csv`: 2,000 Post IDs.
 
-## Planned columns
+## Column
 
 | Column | Values | Notes |
 | --- | --- | --- |
 | `tweet_id` | Numeric string | X Post ID; retain as a string. |
-| `label_name` | `NO`, `YES` | `YES` denotes ragebait; `NO` denotes non-ragebait. |
 
-## Planned exclusions
+There is no label column. Inclusion in a file means only that the original Post was included in that study split; it does not reveal or imply whether the Post received a ragebait or non-ragebait research label.
 
-If a future release is approved, it will not include post text, usernames, profiles, direct URLs, media, annotation reasons, hydrated Post objects, or user-level attributes. The final fields, access mechanism, license, and permitted uses may change following institutional review, platform-policy confirmation, and risk assessment.
+## Excluded fields
 
-Do not add source or derived row-level data to this repository unless the required review and release checks have been completed. Run `python scripts/validate_release.py` to confirm that the repository remains in the withheld state.
+The files exclude the internal `label_name` and `reason` fields, post text, usernames, profiles, direct URLs, media, hydrated Post objects, and user-level attributes.
+
+Run `python scripts/validate_release.py` before every release. Do not replace these files with internal source CSVs.

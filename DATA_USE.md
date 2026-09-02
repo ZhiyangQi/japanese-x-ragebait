@@ -4,7 +4,7 @@ This repository separates the authors' research annotations from X content.
 
 ## What is distributed
 
-The CSV files contain X Post IDs, binary ragebait labels, readable label names, and annotation provenance. They do not contain post text, usernames, profiles, direct URLs, media, or hydrated Post objects.
+The CSV files contain only X Post IDs and binary `YES`/`NO` ragebait labels. They do not contain post text, usernames, profiles, direct URLs, media, annotation provenance, or hydrated Post objects.
 
 ## Permitted purpose
 
@@ -28,4 +28,3 @@ No license to X content is granted by this repository. Post IDs and rehydrated c
 ## Corrections and removals
 
 The maintainers should provide a public issue or contact channel for correction and removal concerns after publication. A future release may remove an identifier without replacing it when continued distribution is inappropriate.
-

@@ -11,13 +11,10 @@
 | Column | Values | Notes |
 | --- | --- | --- |
 | `tweet_id` | Numeric string | X Post ID; retain as a string. |
-| `label` | `0`, `1` | `1` denotes ragebait. |
-| `label_name` | `NO`, `YES` | Readable equivalent of `label`. |
-| `annotation_rounds` | string | Sampling/annotation provenance; multiple values are separated by `\|`. |
+| `label_name` | `NO`, `YES` | `YES` denotes ragebait; `NO` denotes non-ragebait. |
 
 ## Excluded fields
 
-The source research files contain post text for internal analysis. The release-generation step deliberately excludes that column. The public files also exclude usernames, profiles, URLs, media, and user-level attributes.
+The source research files contain post text and internal annotation metadata. The release-generation step deliberately excludes those columns. The public files also exclude usernames, profiles, URLs, media, and user-level attributes.
 
 Never replace these files with the internal source CSVs. Run `python scripts/validate_release.py` before every public release.
-

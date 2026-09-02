@@ -80,7 +80,7 @@ def main() -> int:
     with args.input.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
 
-    required = {"tweet_id", "label", "label_name", "annotation_rounds"}
+    required = {"tweet_id", "label_name"}
     if not rows or not required.issubset(rows[0]):
         print(f"Input must contain: {', '.join(sorted(required))}", file=sys.stderr)
         return 2
@@ -99,9 +99,7 @@ def main() -> int:
                 post = posts.get(post_id)
                 record = {
                     "tweet_id": post_id,
-                    "label": int(row["label"]),
                     "label_name": row["label_name"],
-                    "annotation_rounds": row["annotation_rounds"],
                     "available": post is not None,
                 }
                 if post is not None:
@@ -123,4 +121,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

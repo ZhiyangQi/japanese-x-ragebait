@@ -12,7 +12,7 @@ Official dataset release for **“From Detection to Characterization: A Large-Sc
 | Test | 2,000 | 1,000 | 1,000 | [`data/test.csv`](data/test.csv) |
 | **Total** | **18,558** | **9,279** | **9,279** | |
 
-The public files are **dehydrated**: they do not contain post text, usernames, user profiles, URLs, or media. They contain only Post IDs, research labels, and annotation provenance.
+The public files are **dehydrated**: they do not contain post text, usernames, user profiles, URLs, or media. They contain only Post IDs and their `YES`/`NO` research labels.
 
 ## Why the post text is not included
 
@@ -25,9 +25,7 @@ This also means that deleted, protected, suspended, or otherwise unavailable pos
 | Field | Type | Description |
 | --- | --- | --- |
 | `tweet_id` | string | X Post ID. Keep as a string to avoid integer precision loss. |
-| `label` | integer | `1` = ragebait, `0` = non-ragebait. |
-| `label_name` | string | Human-readable label: `YES` or `NO`. |
-| `annotation_rounds` | string | Sampling and annotation provenance used during dataset construction. |
+| `label_name` | string | `YES` = ragebait, `NO` = non-ragebait. |
 
 See [`data/README.md`](data/README.md) and [`data/manifest.json`](data/manifest.json) for complete release metadata and checksums.
 
@@ -39,9 +37,23 @@ import pandas as pd
 train = pd.read_csv("data/train.csv", dtype={"tweet_id": "string"})
 test = pd.read_csv("data/test.csv", dtype={"tweet_id": "string"})
 
-print(train.shape)  # (16558, 4)
-print(test.shape)   # (2000, 4)
+print(train.shape)  # (16558, 2)
+print(test.shape)   # (2000, 2)
 ```
+
+## Annotation model and prompt
+
+Both GPT-assisted labeling stages used OpenAI **GPT-5.4 mini**, with the API model identifier `gpt-5.4-mini`. Requests were submitted through the Chat Completions Batch API with `temperature=0.2`.
+
+The same Japanese binary-classification prompt was used in both stages. It defines ragebait in terms of intentional provocation and distinguishes it from ordinary negative opinions, complaints, news sharing, and calm criticism.
+
+- [Full Japanese annotation prompt](prompts/ragebait_annotation_ja.txt)
+- Output label: `YES` or `NO`
+- Prompt role: `user`
+- Model: `gpt-5.4-mini`
+- Temperature: `0.2`
+
+The labels are LLM-generated pseudo-labels rather than manually established gold labels. The accompanying paper reports a separate two-annotator validation on a balanced sample of 200 posts.
 
 ## Rehydrate locally through the official X API
 
@@ -91,4 +103,3 @@ The trained model checkpoints and model cards will be released separately on Hug
 ## Contact
 
 For dataset corrections, removal concerns, or reproducibility questions, open a GitHub issue after the repository is published.
-

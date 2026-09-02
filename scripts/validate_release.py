@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
-EXPECTED_FIELDS = ["tweet_id", "label", "label_name", "annotation_rounds"]
+EXPECTED_FIELDS = ["tweet_id", "label_name"]
 FORBIDDEN_FIELDS = {
     "text",
     "tweet_text",
@@ -72,9 +72,8 @@ def main() -> int:
                     fail(f"{path}: duplicate Post ID {post_id}")
                 split_ids.add(post_id)
                 counts[row["label_name"]] += 1
-                expected_label = "1" if row["label_name"] == "YES" else "0"
-                if row["label"] != expected_label:
-                    fail(f"{path}: label mismatch at row {rows + 1}")
+                if row["label_name"] not in {"YES", "NO"}:
+                    fail(f"{path}: invalid label at row {rows + 1}")
 
         if rows != expected["rows"]:
             fail(f"{path}: expected {expected['rows']} rows, found {rows}")
@@ -105,4 +104,3 @@ if __name__ == "__main__":
     except AssertionError as error:
         print(f"FAIL {error}", file=sys.stderr)
         raise SystemExit(1)
-

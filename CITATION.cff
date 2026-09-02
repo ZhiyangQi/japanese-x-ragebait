@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite the accompanying paper."
+title: "Japanese Ragebait Dataset"
+type: dataset
+authors:
+  - family-names: Qi
+    given-names: Zhiyang
+  - family-names: Ito
+    given-names: Kazuhiro
+  - family-names: Chen
+    given-names: Jinghui
+  - family-names: Nakamura
+    given-names: Hibiki
+  - family-names: Chen
+    given-names: Zhangxuan
+  - family-names: Murata
+    given-names: Erina
+  - family-names: Chujyo
+    given-names: Masaki
+  - family-names: Toriumi
+    given-names: Fujio
+version: "1.0.0-draft"
+preferred-citation:
+  type: conference-paper
+  title: "From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X"
+  authors:
+    - family-names: Qi
+      given-names: Zhiyang
+    - family-names: Ito
+      given-names: Kazuhiro
+    - family-names: Chen
+      given-names: Jinghui
+    - family-names: Nakamura
+      given-names: Hibiki
+    - family-names: Chen
+      given-names: Zhangxuan
+    - family-names: Murata
+      given-names: Erina
+    - family-names: Chujyo
+      given-names: Masaki
+    - family-names: Toriumi
+      given-names: Fujio
+  collection-title: "WI-IAT 2026"
+  year: 2026
+

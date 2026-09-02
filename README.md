@@ -1,8 +1,8 @@
 # Japanese Ragebait Dataset
 
-Official dataset release for **“From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X”**, accepted at WI-IAT 2026.
+Official repository for **“From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X”**, accepted at WI-IAT 2026.
 
-> **Private review release:** this repository is currently private and is being reviewed before public release.
+> **Review status:** this repository is currently private. The labeled Post ID files are not distributed while the authors complete the appropriate institutional ethics review or obtain a written determination that the release is not subject to review, confirm platform-policy requirements, and finalize the data license and removal process. The authors intend to release the data only after these checks, and only in a reasonable, lawful, and policy-compliant form.
 
 ## What is ragebait?
 
@@ -10,42 +10,42 @@ Official dataset release for **“From Detection to Characterization: A Large-Sc
 
 Oxford University Press named *rage bait* the **[Oxford Word of the Year 2025](https://corp.oup.com/word-of-the-year/)**, reporting that its usage had tripled over the preceding 12 months. The recognition reflects growing public awareness of how outrage can be deliberately used to capture attention and drive online engagement.
 
-## Dataset
+## Planned dataset
 
-| Split | Total | Ragebait | Non-ragebait | File |
+| Split | Total | Ragebait | Non-ragebait | Current availability |
 | --- | ---: | ---: | ---: | --- |
-| Train | 16,558 | 8,279 | 8,279 | [`data/train.csv`](data/train.csv) |
-| Test | 2,000 | 1,000 | 1,000 | [`data/test.csv`](data/test.csv) |
-| **Total** | **18,558** | **9,279** | **9,279** | |
+| Train | 16,558 | 8,279 | 8,279 | Withheld pending review |
+| Test | 2,000 | 1,000 | 1,000 | Withheld pending review |
+| **Total** | **18,558** | **9,279** | **9,279** | **No row-level files distributed** |
 
-The public files are **dehydrated**: they do not contain post text, usernames, user profiles, URLs, or media. They contain only Post IDs and their `YES`/`NO` research labels.
+These counts describe the labeled dataset used in the study. This repository currently provides no Post IDs, post text, usernames, user profiles, URLs, media, annotation reasons, or hydrated Post objects.
 
-## Why the post text is not included
+If a future release is approved, the planned format is **dehydrated** and limited to the minimum fields needed for research validation: Post IDs and `YES`/`NO` research labels. The final access mechanism and scope may change in response to institutional review, X policy, applicable law, and risk assessment.
+
+## Why post text will not be included
 
 The current [X Developer Policy](https://docs.x.com/developer-terms/policy) restricts redistribution of hydrated X content in downloadable datasets. The [restricted-use guidance](https://docs.x.com/developer-terms/restricted-use-cases) recommends sharing Post IDs so researchers can request the current public object directly from X.
 
-This also means that deleted, protected, suspended, or otherwise unavailable posts remain unavailable when the dataset is used later.
+Any future release will require researchers to obtain currently available objects directly from X through an officially permitted interface. Deleted, protected, suspended, or otherwise unavailable posts must remain unavailable.
 
-## Schema
+## Planned schema
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `tweet_id` | string | X Post ID. Keep as a string to avoid integer precision loss. |
 | `label_name` | string | `YES` = ragebait, `NO` = non-ragebait. |
 
-See [`data/README.md`](data/README.md) and [`data/manifest.json`](data/manifest.json) for complete release metadata and checksums.
+See [`data/README.md`](data/README.md) for the planned structure and current review status. No dataset download is currently provided.
 
-## Load the labels
+## Conditions for a future release
 
-```python
-import pandas as pd
+Before distributing row-level data, the authors plan to:
 
-train = pd.read_csv("data/train.csv", dtype={"tweet_id": "string"})
-test = pd.read_csv("data/test.csv", dtype={"tweet_id": "string"})
-
-print(train.shape)  # (16558, 2)
-print(test.shape)   # (2000, 2)
-```
+1. Obtain the appropriate institutional ethics review, approval, or written determination of non-applicability.
+2. Confirm that the release mechanism and permitted uses comply with the current X terms and policies.
+3. Finalize a license for the original research annotations and a clear correction/removal procedure.
+4. Reassess re-identification and reputational risks and distribute only the minimum necessary fields.
+5. Validate that no post text, usernames, profiles, URLs, media, annotation reasons, or user-level attributes are included.
 
 ## Annotation model and prompt
 
@@ -61,27 +61,13 @@ The same Japanese binary-classification prompt was used in both stages. It defin
 
 The labels are LLM-generated pseudo-labels rather than manually established gold labels. The accompanying paper reports a separate two-annotator validation on a balanced sample of 200 posts.
 
-## Rehydrate locally through the official X API
-
-An optional standard-library script looks up up to 100 Post IDs per request using X API v2. It does not request user-profile expansions.
-
-```bash
-export X_BEARER_TOKEN="YOUR_TOKEN"
-
-python scripts/rehydrate.py \
-  --input data/test.csv \
-  --output hydrated/test.jsonl
-```
-
-The `hydrated/` directory is excluded from Git. Do not commit or publicly redistribute its contents. API access, availability, pricing, and rate limits are controlled by X and may change.
-
-## Validate the release
+## Repository safeguard
 
 ```bash
 python scripts/validate_release.py
 ```
 
-The validator checks split sizes, class balance, IDs, headers, duplicate IDs, checksums, and the absence of prohibited content columns.
+While the data is withheld, the validator fails if row-level CSV files or a release manifest are tracked by Git.
 
 ## Intended use and limitations
 
@@ -93,7 +79,7 @@ The validator checks split sizes, class balance, IDs, headers, duplicate IDs, ch
 
 ## Models
 
-The three trained checkpoints and their model cards are available on Hugging Face. They are currently private during the review-release stage.
+The three trained checkpoints and their model cards are available on Hugging Face. They are currently private during final preparation and are planned for public release.
 
 | Model | Base model | Hugging Face repository |
 | --- | --- | --- |

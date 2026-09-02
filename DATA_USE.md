@@ -1,18 +1,22 @@
 # Data use and responsible research
 
-This repository separates the authors' research annotations from X content.
+This repository separates the authors' research documentation from X content and currently distributes no row-level dataset.
 
-## What is distributed
+## Current availability
 
-The CSV files contain only X Post IDs and binary `YES`/`NO` ragebait labels. They do not contain post text, usernames, profiles, direct URLs, media, annotation provenance, or hydrated Post objects.
+The labeled Post ID files are withheld while the authors complete the appropriate institutional ethics review or obtain a written determination of non-applicability, confirm platform-policy requirements, and finalize the data license and removal process.
 
-## Permitted purpose
+## Planned release content
 
-This release candidate is intended for non-commercial academic research, peer review, and validation of the accompanying WI-IAT 2026 study. Before public release, the authors should confirm the final data-license wording with their institution if required.
+If a future release is approved, it is planned to contain only X Post IDs and binary `YES`/`NO` research labels. It will not contain post text, usernames, profiles, direct URLs, media, annotation reasons, hydrated Post objects, or user-level attributes. The final access mechanism and scope may change following review.
+
+## Intended purpose
+
+Any future release is intended for non-commercial academic research, peer review, and validation of the accompanying WI-IAT 2026 study. Availability is not promised until the required review and compliance checks are complete.
 
 ## User responsibilities
 
-By using the dataset, researchers are expected to:
+If data is released in the future, researchers will be expected to:
 
 1. Obtain X content only through an official, currently permitted interface using their own credentials.
 2. Follow the current X Terms of Service, Developer Agreement, Developer Policy, and applicable law.
@@ -23,8 +27,8 @@ By using the dataset, researchers are expected to:
 
 ## Rights
 
-No license to X content is granted by this repository. Post IDs and rehydrated content remain subject to X's terms and the rights of the original authors. A final license for the original research annotations should be selected before public release.
+No license to X content is granted by this repository. Any future Post ID release and rehydrated content will remain subject to X's then-current terms and the rights of the original authors. A final license for the original research annotations must be selected before release.
 
 ## Corrections and removals
 
-The maintainers should provide a public issue or contact channel for correction and removal concerns after publication. A future release may remove an identifier without replacing it when continued distribution is inappropriate.
+Before any data release, the maintainers will establish a public issue or contact channel for correction and removal concerns. A future release may remove an identifier without replacing it when continued distribution is inappropriate.

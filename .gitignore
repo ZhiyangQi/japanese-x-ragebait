@@ -8,4 +8,5 @@ __pycache__/
 hydrated/
 private/
 credentials/
-
+data/*.csv
+data/manifest.json

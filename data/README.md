@@ -1,20 +1,18 @@
-# Dataset files
+# Dataset availability
 
-## Splits
+No row-level dataset files are currently distributed in this repository. The previously staged `train.csv`, `test.csv`, and `manifest.json` files have been withdrawn while the authors complete the appropriate institutional ethics and compliance review.
 
-- `train.csv`: 16,558 examples, balanced between 8,279 ragebait and 8,279 non-ragebait labels.
-- `test.csv`: 2,000 examples, balanced between 1,000 ragebait and 1,000 non-ragebait labels.
-- `manifest.json`: release state, schema, class counts, file sizes, and SHA-256 checksums.
+The study dataset contains 16,558 training examples and 2,000 test examples. Each split is balanced between ragebait and non-ragebait labels. These counts are provided for documentation only and are not a data release.
 
-## Columns
+## Planned columns
 
 | Column | Values | Notes |
 | --- | --- | --- |
 | `tweet_id` | Numeric string | X Post ID; retain as a string. |
 | `label_name` | `NO`, `YES` | `YES` denotes ragebait; `NO` denotes non-ragebait. |
 
-## Excluded fields
+## Planned exclusions
 
-The source research files contain post text and internal annotation metadata. The release-generation step deliberately excludes those columns. The public files also exclude usernames, profiles, URLs, media, and user-level attributes.
+If a future release is approved, it will not include post text, usernames, profiles, direct URLs, media, annotation reasons, hydrated Post objects, or user-level attributes. The final fields, access mechanism, license, and permitted uses may change following institutional review, platform-policy confirmation, and risk assessment.
 
-Never replace these files with the internal source CSVs. Run `python scripts/validate_release.py` before every public release.
+Do not add source or derived row-level data to this repository unless the required review and release checks have been completed. Run `python scripts/validate_release.py` to confirm that the repository remains in the withheld state.

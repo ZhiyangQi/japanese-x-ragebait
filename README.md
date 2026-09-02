@@ -2,7 +2,7 @@
 
 Official dataset release for **“From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X”**, accepted at WI-IAT 2026.
 
-> **Release candidate:** this repository is prepared for local review and has not yet been published to GitHub.
+> **Private review release:** this repository is currently private and is being reviewed before public release.
 
 ## Dataset
 

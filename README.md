@@ -4,7 +4,7 @@ Official repository for **“From Detection to Characterization: A Large-Scale S
 
 **Paper:** [arXiv:2609.02262](https://arxiv.org/abs/2609.02262)
 
-> **ID-only release candidate:** this repository is currently private during final preparation. The release files contain only the X Post IDs used in the study's training and test splits. They contain no per-Post labels, post text, annotation reasons, usernames, profiles, URLs, media, or hydrated X objects.
+> **ID-only release:** the release files contain only the X Post IDs used in the study's training and test splits. They contain no per-Post labels, post text, annotation reasons, usernames, profiles, URLs, media, or hydrated X objects.
 
 ## What is ragebait?
 
@@ -63,7 +63,7 @@ The internal labels are LLM-generated pseudo-labels rather than manually establi
 
 ## Models
 
-The three trained checkpoints and their model cards are available on Hugging Face. They are currently private during final preparation and are planned for public release.
+The three trained checkpoints and their model cards are publicly available on Hugging Face.
 
 | Model | Base model | Hugging Face repository |
 | --- | --- | --- |
@@ -88,4 +88,4 @@ This work was supported by JST ERATO (JPMJER2502).
 
 ## Contact
 
-For dataset corrections, removal concerns, or reproducibility questions, open a GitHub issue after the repository is published.
+For dataset corrections, removal concerns, or reproducibility questions, open a GitHub issue.

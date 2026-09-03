@@ -4,7 +4,7 @@ This repository distributes a minimized, ID-only index of the X Posts used in th
 
 ## What is distributed
 
-The release candidate contains two single-column files: `data/train_ids.csv` and `data/test_ids.csv`. They contain 16,558 and 2,000 X Post IDs, respectively.
+The release contains two single-column files: `data/train_ids.csv` and `data/test_ids.csv`. They contain 16,558 and 2,000 X Post IDs, respectively.
 
 ## What is not distributed
 
@@ -14,7 +14,7 @@ Inclusion means only that the Post was part of the study dataset. It does not me
 
 ## Intended purpose
 
-The resource is intended for non-commercial academic research, peer review, and validation of the accompanying WI-IAT 2026 study. Public availability remains subject to the required institutional and platform-policy checks.
+The resource is intended for non-commercial academic research, peer review, and validation of the accompanying WI-IAT 2026 study.
 
 ## User responsibilities
 
@@ -33,4 +33,4 @@ No license to X content is granted by this repository. The Post IDs and any rehy
 
 ## Corrections and removals
 
-The maintainers will provide a public issue or contact channel for correction and identifier-removal concerns when the repository is published. A release may remove an identifier without replacing it when continued distribution is inappropriate.
+Use the repository's public issue tracker for correction and identifier-removal concerns. A release may remove an identifier without replacing it when continued distribution is inappropriate.

@@ -2,7 +2,7 @@
 
 Official repository for **“From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X”**, accepted at WI-IAT 2026.
 
-**Paper:** [arXiv:2609.02262](https://arxiv.org/abs/2609.02262)
+**Paper:** [![arXiv](https://img.shields.io/badge/arXiv-2609.02262-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.02262)
 
 > **ID-only release:** the release files contain only the X Post IDs used in the study's training and test splits. They contain no per-Post labels, post text, annotation reasons, usernames, profiles, URLs, media, or hydrated X objects.
 
@@ -62,6 +62,8 @@ The internal labels are LLM-generated pseudo-labels rather than manually establi
 - This repository grants no license to X content. See [`DATA_USE.md`](DATA_USE.md).
 
 ## Models
+
+[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-FFD21E)](https://huggingface.co/ZhiyangQi97)
 
 The three trained checkpoints and their model cards are publicly available on Hugging Face.
 

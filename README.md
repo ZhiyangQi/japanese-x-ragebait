@@ -2,6 +2,8 @@
 
 Official repository for **“From Detection to Characterization: A Large-Scale Study of Ragebait on Japanese X”**, accepted at WI-IAT 2026.
 
+**Paper:** [arXiv:2609.02262](https://arxiv.org/abs/2609.02262)
+
 > **ID-only release candidate:** this repository is currently private during final preparation. The release files contain only the X Post IDs used in the study's training and test splits. They contain no per-Post labels, post text, annotation reasons, usernames, profiles, URLs, media, or hydrated X objects.
 
 ## What is ragebait?
